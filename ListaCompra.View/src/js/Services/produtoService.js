@@ -1,3 +1,4 @@
+//Cria o serviço que será responsável por realizar as requisições contra o serviço de Produto da API
 angular.module("listaCompras").factory("produtoService", function ($http) {
     var _getProdutos = function () {
         return $http.get(_UrlApi + '/Produto');
