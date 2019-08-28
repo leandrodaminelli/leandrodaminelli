@@ -1,0 +1,50 @@
+.label-float{
+  position: relative;
+}
+
+.label-float input{
+  border: 0;
+  border-bottom: 2px solid lightgrey;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -webkit-appearance:none;
+  border-radius: 0;
+  padding-top: 16px;
+  height: 38px;
+}
+
+.label-float input:focus{
+  border-bottom: 2px solid #3951b2;
+}
+
+.label-float input::placeholder{
+  color:transparent;
+}
+
+.label-float label{
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+}
+
+.label-float input:focus:required:invalid{
+  border-bottom: 2px solid red;
+}
+
+.label-float input:required:invalid + label:before{
+  content: '*';
+}
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label{
+  font-size: 13px;
+  margin-top: 0;
+  color: #3951b2;
+}
