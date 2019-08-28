@@ -1,1 +1,1 @@
-Repositório pessoal para hospedagem de projetos de teste.
+Projeto de testes utilizando front-end em HTML/AngularJS e back-end em Java com JPA/Hibernate/Webservice REST
