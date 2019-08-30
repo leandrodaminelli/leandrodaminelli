@@ -1,3 +1,8 @@
+var alertify = require("alertifyjs/build/alertify.min.js");
+var $ = require("jquery/dist/jquery.min.js");
+require('../Services/listaCompraService');
+require('../Services/produtoService');
+
 //Declara o controller da aplicação, injetando os serviços que serão utilizados
 angular.module("listaCompras").controller("lcController", function ($scope, produtoService, listaCompraService) {
     //Carrega os produtos através do get na API
@@ -98,7 +103,7 @@ angular.module("listaCompras").controller("lcController", function ($scope, prod
     $scope.adicionarAoCarrinho = function (produto) {
         //Solicita ao usuário a quantidade a adicionar ao carrinho
         alertify.prompt("Informe a quantidade desejada:", "0", function (evt, valor) {
-            
+
             //Valida se o valor informado é numérico e se é maior que 0
             qtd = Number(valor);
             if (isNaN(qtd) || qtd <= 0) {
@@ -166,7 +171,7 @@ angular.module("listaCompras").controller("lcController", function ($scope, prod
             })
         }).set({ title: "" });
     };
-    
+
     //Inicia a aplicação carregando os dados do BD
     carregarProdutos();
     carregarListas();

@@ -1,1 +1,8 @@
-ListaCompra.View/node_modules/
+/ListaCompra.View/node_modules/
+/ListaCompra.View/dist/
+/ListaCompra.Model/build/
+/ListaCompra.Model/dist/
+/ListaCompra.Model/nbproject/
+/ListaCompra.RestAPI/build/
+/ListaCompra.RestAPI/dist/
+/ListaCompra.RestAPI/nbproject/

@@ -3,18 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Compras</title>
-    <link rel="stylesheet" href="../node_modules/alertifyjs/build/css/alertify.css" />
-    <link rel="stylesheet" href="../node_modules/alertifyjs/build/css/themes/default.css" />
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/alertify.min.css" />
+    <link rel="stylesheet" href="./css/alertify-default-theme.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/label-float.css" />
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="../node_modules/alertifyjs/build/alertify.js"></script>
-    <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="./js/app.js"></script>
-    <script src="./js/Controllers/listaCompraController.js"></script>
-    <script src="./js/Services/listaCompraService.js"></script>
-    <script src="./js/Services/produtoService.js"></script>
+    <script src="../dist/bundle.js"></script>
 </head>
 
 <body class="bg-light" ng-controller="lcController">
@@ -139,7 +132,7 @@
                     <tbody>
                         <tr ng-repeat="lista in listasCompra">
                             <td>{{ lista.id }}</td>
-                            <td>{{ lista.dscProdutos }}</td>
+                            <td style="white-space: pre-wrap;">{{ lista.dscProdutos }}</td>
                             <td>R$ {{ lista.valorTotal | number:2 }}</td>
                             <td style="text-align: center">
                                 <img src="./img/trashbin.png" ng-click="removerLista(lista)" />
