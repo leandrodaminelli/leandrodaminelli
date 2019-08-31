@@ -38,7 +38,6 @@ public class ProdutoService {
         Gson jObject = gBuilder.create();
 
         try {
-            //ProdutoDAO dao = new ProdutoDAO();
             return jObject.toJson(dao.getAll());
         } catch (Exception e) {
             Resposta lResposta = new Resposta();
@@ -60,7 +59,6 @@ public class ProdutoService {
         GsonBuilder gBuilder = new GsonBuilder();
         Gson jObject = gBuilder.create();
         try {
-            //ProdutoDAO dao = new ProdutoDAO();
             return jObject.toJson(dao.getObjectById(id));
         } catch (Exception e) {
             Resposta lResposta = new Resposta();
@@ -83,7 +81,6 @@ public class ProdutoService {
         Gson jObject = gBuilder.create();
         try {
             Produto lProduto = jObject.fromJson(content, Produto.class);
-            //ProdutoDAO dao = new ProdutoDAO();
             dao.salvar(lProduto);
 
             lResposta.setMensagem("Sucesso");
@@ -109,7 +106,6 @@ public class ProdutoService {
         Gson jObject = gBuilder.create();
 
         try {
-            //ProdutoDAO dao = new ProdutoDAO();
             dao.remover(id);
 
             lResposta.setMensagem("Sucesso");

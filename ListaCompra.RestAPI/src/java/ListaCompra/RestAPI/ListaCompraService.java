@@ -2,6 +2,7 @@ package ListaCompra.RestAPI;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import javax.inject.Inject;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -22,6 +23,9 @@ public class ListaCompraService {
     @Context
     private UriInfo context;
 
+    @Inject
+    private ListaCompraDAO dao;
+    
     public ListaCompraService() {
     }
 
@@ -35,7 +39,6 @@ public class ListaCompraService {
         Gson jObject = gBuilder.create();
 
         try {
-            ListaCompraDAO dao = new ListaCompraDAO();
             return jObject.toJson(dao.getAll());
         } catch (Exception e) {
             Resposta lResposta = new Resposta();
@@ -58,7 +61,6 @@ public class ListaCompraService {
         Gson jObject = gBuilder.create();
 
         try {
-            ListaCompraDAO dao = new ListaCompraDAO();
             return jObject.toJson(dao.getObjectById(id));
         } catch (Exception e) {
             Resposta lResposta = new Resposta();
@@ -91,7 +93,6 @@ public class ListaCompraService {
                 linha.setProduto(p);
             });
             
-            ListaCompraDAO dao = new ListaCompraDAO();
             dao.salvar(lLista);
 
             lResposta.setMensagem("Sucesso");
@@ -117,7 +118,6 @@ public class ListaCompraService {
         Gson jObject = gBuilder.create();
 
         try {
-            ListaCompraDAO dao = new ListaCompraDAO();
             dao.remover(id);
 
             lResposta.setMensagem("Sucesso");
