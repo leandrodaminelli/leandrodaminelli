@@ -85,6 +85,13 @@ angular.module("listaCompras").controller("lcController", function ($scope, prod
     };
     //Remove o produto do BD da aplicação
     $scope.removerProduto = function (produto) {
+        //Não permite excluir o produto caso o mesmo esteja no carrinho
+        for(i = 0; i < $scope.carrinho.produtos.length; i++){
+            if(produto.id == $scope.carrinho.produtos[i].produtoId){
+                alertify.error("Não é possível excluir um produto que está no carrinho!");
+                return;
+            }
+        }
         //Solicita confirmação do usuário para prosseguir
         alertify.confirm("Deseja excluir o produto '" + produto.nome + "'?", function () {
             produtoService.deleteProduto(produto.id).then(function (resultado) {

@@ -1,5 +1,5 @@
 //Variável global para guardar a referencia da URL da API em uso
-window._UrlApi = "http://localhost:8080/ListaCompra/RestAPI";
+window._UrlApi = "http://leandrodaminelli.ddns.net:8080/ListaCompra/RestAPI";
 
 //Inicia o módulo da aplicação no angular
 //Uso o caminho explícito da versão min para gerar um bundle reduzido
